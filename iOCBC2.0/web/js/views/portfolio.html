@@ -1,0 +1,196 @@
+<body ng-controller="DashboardController">
+    <div class="skin-blue sidebar-mini wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>EB</b></span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>EB</b>Portal</span>
+            </a>
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" ng-click="AdminLTE.pushMenu.activate()" data-toggle='offcanvas' class="sidebar-toggle" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="img/default-profile-160x160.png" class="user-image" alt="User Image"/>
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">{{currentUser.firstName}} {{currentUser.lastName}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="img/default-profile-160x160.png" class="img-circle" alt="User Image" />
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel">
+                    <div class="pull-left image">
+                        <img src="img/default-profile-160x160.png" class="img-circle" alt="User Image" />
+                    </div>
+
+                    <div ng-controller="ModalController">
+                        <!-- Notification modal script-->
+                        <script type="text/ng-template" id="notificationPrompt.html">
+                            <div class="modal-header">
+                            <h3 class="modal-title">Notification Manager</h3>
+                            </div>
+                            <div class="modal-body">
+                            Do you want to contact your financial manager?
+                            </div>
+                            <div class="modal-footer">
+                            <button class="btn btn-primary" ng-click="yes()">Yes</button>
+                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                            </div>
+                        </script>
+                        <script type="text/ng-template" id="notificationSuccess.html">
+                            <div class="modal-header">
+                            <h3 class="modal-title">Notification Success!</h3>
+                            </div>
+                            <div class="modal-body">
+                            Your financial manager have been notified and will contact you shortly!
+                            </div>
+                            <div class="modal-footer">
+                            <button class="btn btn-primary" ng-click="ok()">OK</button>
+                            </div>
+                        </script>
+                        <div class="pull-right image">
+                            <img src="img/notify-45x45.png" class="img-circle" ng-click="open()" alt="Notify FM" />
+                        </div>
+                    </div>
+
+                    <div class="pull-left info">
+                        <p>{{currentUser.firstName}} {{currentUser.lastName}}</p>
+                        <!-- Status -->
+                        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+                <ul class="sidebar-menu">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li><a href ng-click="dashboard()"><i class='fa fa-home'></i> <span>Home</span></a></li>
+                    <li class="active"><a href="#" ng-click="navigate()"><i class='fa fa-star-o'></i> <span>View Portfolio Holdings</span></a></li>
+                    <li><a href="#"><i class='fa fa-bar-chart'></i> <span>View E-Statements</span></a></li>
+                    <li><a href="#"><i class='fa fa-list-alt'></i> <span>Current Account List</span></a></li>
+                    <li><a href="#"><i class='fa fa-money'></i> <span>Cash Management</span></a></li>
+                    <li><a href="#"><i class='fa fa-credit-card'></i> <span>Transactions</span></a></li>
+                    <li><a href="#"><i class='fa fa-line-chart'></i> <span>FX Rates</span></a></li>
+
+                </ul><!-- /.sidebar-menu -->
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Portfolio Holdings
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href ng-click="dashboard()"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="active">My Portfolio</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <!-- Your Page Content Here -->
+                <!-- Main content -->
+                <div class="row" ng-controller="PortfolioController">
+                    <div class="col-md-7">
+                        <div class="box box-info">
+                            <div class="box-header">
+                                <h3 class="box-title">My Overall Portfolio Performance</h3>
+                            </div>
+                            <div class="box-body">
+                                <performance-chart data="filtered"></performance-chart>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="box box-success">
+                            <div class="box-header">
+                                <h3 class="box-title">My Portfolio Performance</h3>
+                            </div><!-- /.box-header -->
+                            <div class="checkbox">
+                                View by Year:
+                                <label>
+                                    <input type="checkbox" ng-click="includeYears(2015)">2015
+                                </label>
+                                <label>
+                                    <input type="checkbox" ng-click="includeYears(2014)">2014
+                                </label>
+                                <label>
+                                    <input type="checkbox" ng-click="includeYears(2013)">2013
+                                </label>
+                            </div>
+                            <div class="box-body no-padding">
+                                <table class="table">
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Value in (USD)</th>
+                                        <th>Gain/Loss %</th>
+                                    </tr>
+                                    <tr ng-repeat="performance in portfolio.performances| filter:yearFilter | orderBy: '-x'">
+                                        <td>{{performance.x| date:'MMM-yyyy'}}</td>
+                                        <td>
+                                            ${{performance.y| number : 2}}
+                                        </td>
+                                        <td>
+                                            <span class="{{evaluate(performance.difference)}}">
+
+                                                {{performance.difference}}%
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2015 <a href="#">iOCBC</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+</body>

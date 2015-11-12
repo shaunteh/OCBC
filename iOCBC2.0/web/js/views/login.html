@@ -1,0 +1,52 @@
+<body ng-controller="LoginController">
+    <div class="login-page">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="#"><b>iOCBC 2.0</b></a>
+            </div><!-- /.login-logo -->
+
+            <div class="login-box-body" ng-if="!login">
+                <p class="login-box-msg"> <font color='red'>{{result}}</font></p>
+                <p class="login-box-msg">Sign in to start something big</p>
+                <form name='loginForm' ng-submit="authenticateUser()" method="post">
+                    <div class="form-group has-feedback">
+                        <input type="username" class="form-control" placeholder="Username" ng-model="credentials.username"/>
+
+                        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    </div>
+                    <div class="form-group has-feedback">
+                        <input type="password" class="form-control" placeholder="Password" ng-model="credentials.password"/>
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+
+                        </div><!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div><!-- /.col -->
+                    </div>
+                </form>
+            </div><!-- /.login-box-body -->
+
+            <div class="login-box-body" ng-if="login">
+                <p class="login-box-msg">Enter the 6-digit verification number</p>
+                <form name='authenticateForm' method="post">
+                    <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="6-digit code"/>
+
+                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+
+                        </div><!-- /.col -->
+                        <div class="col-xs-4">
+                            <button type="button" ng-click="authenticate()" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div><!-- /.col -->
+                    </div>
+                </form>
+            </div><!-- /.login-box-body -->
+        </div><!-- /.login-box -->
+    </div><!-- /.login-page -->
+</body>

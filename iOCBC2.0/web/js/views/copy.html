@@ -1,0 +1,21 @@
+<div ng-init="tradeValue = 10" class="modal-header">
+    <h3 class="modal-title">Copying Trade</h3>
+    <span></span>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+            <button type="button" ng-click="decrement()" class="btn btn-default">
+                <i class="fa fa-minus"></i>
+            </button>
+            <input style="max-width: 100px;" name="tradeValue" type="number" ng-model="tradeValue" value="{{tradeValue}}" class="copy-form-control" id="tradeValue">
+            <button type="button" ng-click="increment()" class="btn btn-default">
+                <i class="fa fa-plus"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

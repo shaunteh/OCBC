@@ -1,0 +1,240 @@
+<body ng-controller="SocialTradingController">
+    <div class="wrapper">
+        <!-- Main Header -->
+        <header class="main-header">
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <div class="navbar-header">
+                    <a href ui-sref='dashboard' class="navbar-brand"><b>iOCBC</b>2.0</a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li ng-controller="ModalController">
+                            <!-- Notification modal script-->
+                            <script type="text/ng-template" id="notificationPrompt.html">
+                                <div class="modal-header">
+                                <h3 class="modal-title">Notification Manager</h3>
+                                </div>
+                                <div class="modal-body">
+                                Do you want to contact your financial manager?
+                                </div>
+                                <div class="modal-footer">
+                                <button class="btn btn-primary" ng-click="yes()">Yes</button>
+                                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                                </div>
+                            </script>
+                            <script type="text/ng-template" id="notificationSuccess.html">
+                                <div class="modal-header">
+                                <h3 class="modal-title">Notification Success!</h3>
+                                </div>
+                                <div class="modal-body">
+                                Your financial manager have been notified and will contact you shortly!
+                                </div>
+                                <div class="modal-footer">
+                                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                                </div>
+                            </script>
+                            <div class="image bell">
+                                <img src="img/notify-45x45.png" class="img-circle" ng-click="open()" alt="Notify FM" />
+                            </div>
+                        </li>
+                        <li class="active"><a href ng-click="dashboard()"><i class='fa fa-home'></i> <span>Home</span></a></li>
+                        <li><a href="#"><i class='fa fa-credit-card'></i> Trades</a></li>
+                        <li><a href="#"><i class='fa fa-star-o'></i> Portfolio</a></li>
+                        <li><a href="#"><i class='fa fa-rocket'></i> Recommendations</a></li>
+                        <li><a href ng-click="social()"><i class='fa fa-users'></i> Social Trading</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account Menu -->
+                        <li class="dropdown user user-menu">
+                            <!-- Menu Toggle Button -->
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <!-- The user image in the navbar-->
+                                <img src="img/default-profile-160x160.png" class="user-image" alt="User Image"/>
+                                <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                                <span class="hidden-xs">{{currentUser.firstName}} {{currentUser.lastName}}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- The user image in the menu -->
+                                <li class="user-header">
+                                    <img src="img/default-profile-160x160.png" class="img-circle" alt="User Image" />
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Social Trading
+                    <small>Begin trading in the network!</small>
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href ng-click="social()"><i class='fa fa-users'></i> Social Trading</a></li>
+                    <li class="active">Dashboard</li>
+                </ol>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+                <!-- Your Page Content Here -->
+                <!-- Main content -->
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <!-- top users -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Top Traders <span class="text-small"> sorted on 1-year trailing return</span></h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <ul class="products-list product-list-in-box">
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="img/user1-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" ng-click="socialUser1();" class="product-title">Bettina Julian </a><br/>
+                                            <span class="title">Returns: <span class="label label-success">685.73%</span></span>
+                                            <span class="title">Closed trades: <span class="result">64</span></span>
+                                            <span class="title">Followers: <span class="result">305</span></span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="img/user3-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript::;" class="product-title">Yuriy Pronin </a><br/>
+                                            <span class="title">Returns: <span class="label label-success">270.38%</span></span>
+                                            <span class="title">Closed trades: <span class="result">421</span></span>
+                                            <span class="title">Followers: <span class="result">262</span></span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="img/user4-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript::;" class="product-title">Sparta Sane </a><br/>
+                                            <span class="title">Returns: <span class="label label-success">207.03%</span></span>
+                                            <span class="title">Closed trades: <span class="result">262</span></span>
+                                            <span class="title">Followers: <span class="result">461</span></span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="product-img">
+                                            <img src="img/user5-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="javascript::;" class="product-title">Hrnielsen Rein </a><br/>
+                                            <span class="title">Returns: <span class="label label-success">205.22%</span></span>
+                                            <span class="title">Closed trades: <span class="result">3467</span></span>
+                                            <span class="title">Followers: <span class="result">1740</span></span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                </ul>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                        <div class="box-footer text-center">
+                            <a href="javascript::;" class="uppercase">View More Traders</a>
+                        </div><!-- /.box-footer -->
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <!-- opinions section -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Opinions</h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <ul class="products-list product-list-in-box">
+                                    <li class="item">
+                                        <span class="pull-right timing-text">23m</span><br/>
+                                        <div class="opinion-img pull-right">
+                                            <img src="img/user2-160x160.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="opinion-info">
+                                            <span class="latest-title">A moment of silence that <br/> extends the whole day</span>
+                                            <a href="#" class="product-title">Ole Hansen </a><br/>
+                                            <span class="position-text">
+                                                Director, Accumen Management
+                                            </span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="opinion-img-small">
+                                            <img src="img/user6-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <span class="pull-right timing-text">48m</span><br/>
+                                            <span class="opinion-title">Gold bulls dead in the water</span>
+                                            <a href="#" class="product-title">Peter Garnry </a><br/>
+                                            <span class="thumbs-up"><i class="fa fa-thumbs-o-up"></i> 23</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="opinion-img-small">
+                                            <img src="img/user7-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <span class="pull-right timing-text">1h</span><br/>
+                                            <span class="opinion-title">Europe's most exciting IPO in years is ABN AMRO</span>
+                                            <a href="#" class="product-title">Andreas Clow </a><br/>
+                                            <span class="thumbs-up"><i class="fa fa-thumbs-o-up"></i> 15</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <div class="opinion-img-small">
+                                            <img src="img/user8-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <span class="pull-right timing-text">2h</span><br/>
+                                            <span class="opinion-title">Jumbo IPO sees bull</span>
+                                            <a href="#" class="product-title">Tan Boon Keng</a><br/>
+                                            <span class="thumbs-up"><i class="fa fa-thumbs-o-up"></i> 74</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                </ul>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                        <div class="box-footer text-center">
+                            <a href="#" class="uppercase">See all</a>
+                        </div><!-- /.box-footer -->
+                    </div>
+
+                </div> <!-- /.row-->
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+
+        <!-- Main Footer -->
+        <footer class="main-footer">
+            <!-- Default to the left -->
+            <strong>Copyright &copy; 2015 <a href="#">iOCBC 2.0</a>.</strong> All rights reserved.
+        </footer>
+    </div><!-- ./wrapper -->
+</body>

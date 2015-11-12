@@ -1,0 +1,49 @@
+<label>My investment timeline is about:</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.time" value="Short Term [ < 1 year ]">
+           Short-term (current till 1 year)
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.time" value="Mid Term [ 1 - 3 years ]">
+            Mid-term (1 - 3 years)
+        </label>
+    </div>
+        <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.time" value="Long Term [ > 3 years ]">
+            Long-term (More than 3 years)
+        </label>
+    </div>
+</div>
+<label>I would like my investment strategy to be:</label>
+<div class="form-group">
+    <div class="radio">
+        <label>
+           <input type="radio" ng-model="formData.pref" value="Wealth Preservation Investor">
+           Preservation of wealth
+        </label>
+    </div>
+    <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.pref" value="Growth Investor">
+            Aggressive growth
+        </label>
+    </div>
+        <div class="radio">
+        <label>
+            <input type="radio" ng-model="formData.pref" value="Income Investor">
+            Steady stream of income
+        </label>
+    </div>
+</div>
+<div class="form-group row">
+<div class="col-xs-6 col-xs-offset-3">
+    <a ui-sref="profile.confirm" class="btn btn-block btn-info">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+</div>
