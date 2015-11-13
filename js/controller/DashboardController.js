@@ -42,18 +42,18 @@ app.controller('DashboardController', function ($scope, $location, $rootScope, S
                 name: 'Portfolio Share ($)',
                 colorByPoint: true,
                 data: [
-                    ['Liquidity (incl. FX Products)', 128972.00],
-                    ['Bonds', 5002.02],
-                    ['Equities', 75462.13],
-                    ['Alternative Investment', 802.06],
+                    ['Liquidity (incl. FX Products)', 12897235.00],
+                    ['Bonds', 500502.02],
+                    ['Equities', 7546422.13],
+                    ['Alternative Investment', 80302.06],
                     {
                         name: 'Real Estate',
-                        y: 120500.00,
+                        y: 12057500.00,
                         sliced: true,
                         selected: true
                     },
-                    ['Precious Metals', 125.00],
-                    ['Others', 350.00]
+                    ['Precious Metals', 12500.00],
+                    ['Others', 35043.00]
                 ]
             }],
         title: {

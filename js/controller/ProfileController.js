@@ -3,8 +3,20 @@ app.controller('ProfileController', function ($scope, $location, $rootScope, Ses
     $scope.user = $rootScope.currentUser;
     var data = [];
 
+    $scope.dashboard = function () {
+        $location.path("dashboard");
+    };
+
+    $scope.social = function () {
+        $location.path("social");
+    };
+
+    $scope.socialUser1 = function () {
+        $location.path("socialUser1");
+    };
+
     $scope.processForm = function () {
-        
+
         $scope.submitted = true;
         if ($rootScope.formData.pref === 'Wealth Preservation Investor') {
             $scope.recommendation = "Your recommended portfolio: ";

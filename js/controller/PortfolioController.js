@@ -1,4 +1,4 @@
-app.controller('PortfolioController', function ($scope, $filter, $location) {
+app.controller('PortfolioController', function ($scope, $filter) {
     $scope.viewYears = [];
 
     $scope.includeYears = function (year) {
@@ -25,178 +25,179 @@ app.controller('PortfolioController', function ($scope, $filter, $location) {
         investments: [
             {
                 type: 'Liquidity (incl. FX Products)',
-                value: 36492.38,
+                value: 3649245.38,
             },
             {
                 type: 'Bonds',
-                value: 5005.02,
+                value: 500502.02,
             },
             {
                 type: 'Real Estate',
-                value: 75464.13,
+                value: 7546422.13,
             },
             {
                 type: 'Alternative Investment',
-                value: 803.06,
+                value: 80302.06,
             },
             {
                 type: 'Equities',
-                value: 180570.00,
+                value: 18057500.00,
             },
             {
                 type: 'Precious Metals',
-                value: 125.00,
+                value: 12500.00,
             },
             {
                 type: 'Others',
-                value: 350.00,
+                value: 35043.00,
             }
         ],
-        totalValue: 331295.21,
+        totalValue: 33129504.21,
         performances: [
             {
                 x: new Date('5/1/2015'),
-                y: 298815.59,
+                y: 29881514.59,
+                
                 difference: 4.45
             },
             {
                 x: new Date('4/1/2015'),
-                y: 284640.04,
+                y: 28464007.04,
                 difference: 7.83
             },
             {
                 x: new Date('3/1/2015'),
-                y: 267720.65,
+                y: 26772015.65,
                 difference: 7.22
             },
             {
                 x: new Date('2/1/2015'),
-                y: 249692.76,
+                y: 24969236.76,
                 difference: 6.32
             },
             {
                 x: new Date('1/1/2015'),
-                y: 231561.10,
+                y: 23156113.10,
                 difference: 4.98
             },
             {
                 x: new Date('12/1/2014'),
-                y: 194146.42,
+                y: 19414256.42,
                 difference: 5.98
             },
             {
                 x: new Date('11/1/2014'),
-                y: 206218.17,
+                y: 20621823.17,
                 difference: 6.22
             },
             {
                 x: new Date('10/1/2014'),
-                y: 214941.29,
+                y: 21494126.29,
                 difference: 4.23
             },
             {
                 x: new Date('9/1/2014'),
-                y: 203721.90,
+                y: 20372132.90,
                 difference: -5.22
             },
             {
                 x: new Date('8/1/2014'),
-                y: 209792.46,
+                y: 20979222.46,
                 difference: 2.98
             },
             {
                 x: new Date('7/1/2014'),
-                y: 221204.16,
+                y: 22120492.16,
                 difference: 5.44
             },
             {
                 x: new Date('6/1/2014'),
-                y: 235428.81,
+                y: 23542839.81,
                 difference: 6.43
             },
             {
                 x: new Date('5/1/2014'),
-                y: 248471.14,
+                y: 24847113.14,
                 difference: 5.54
             },
             {
                 x: new Date('4/1/2014'),
-                y: 235202.29,
+                y: 23520277.29,
                 difference: -5.34
             },
             {
                 x: new Date('3/1/2014'),
-                y: 205990.85,
+                y: 20599058.85,
                 difference: -12.42
             },
             {
                 x: new Date('2/1/2014'),
-                y: 229308.32,
+                y: 22930872.32,
                 difference: 11.32
             },
             {
                 x: new Date('1/1/2014'),
-                y: 221695.36,
+                y: 22169567.36,
                 difference: -3.32
             },
             {
                 x: new Date('12/1/2013'),
-                y: 183327.63,
+                y: 18332792.63,
                 difference: -7.32
             },
             {
                 x: new Date('11/1/2013'),
-                y: 197656.27,
+                y: 19765637.27,
                 difference: 4.32
             },
             {
                 x: new Date('10/1/2013'),
-                y: 189471.62,
+                y: 18947121.62,
                 difference: 7.43
             },
             {
                 x: new Date('9/1/2013'),
-                y: 181231.43,
+                y: 18123121.43,
                 difference: 6.23
             },
             {
                 x: new Date('8/1/2013'),
-                y: 178523.84,
+                y: 17852343.84,
                 difference: -8.04
             },
             {
                 x: new Date('7/1/2013'),
-                y: 194123.12,
+                y: 19412347.12,
                 difference: 11.84
             },
             {
                 x: new Date('6/1/2013'),
-                y: 173569.54,
+                y: 17356967.54,
                 difference: 13.03
             },
             {
                 x: new Date('5/1/2013'),
-                y: 153563.77,
+                y: 15356322.77,
                 difference: 7.75
             },
             {
                 x: new Date('4/1/2013'),
-                y: 142512.27,
+                y: 14251222.27,
                 difference: 2.32
             },
             {
                 x: new Date('3/1/2013'),
-                y: 139284.53,
+                y: 13928403.53,
                 difference: 12.06
             },
             {
                 x: new Date('2/1/2013'),
-                y: 124288.67,
+                y: 12428888.67,
                 difference: 3.57
             },
             {
                 x: new Date('1/1/2013'),
-                y: 120000.00,
+                y: 12000000.00,
                 difference: 0
             }
         ]

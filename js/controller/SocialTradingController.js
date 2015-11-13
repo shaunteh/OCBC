@@ -15,6 +15,10 @@ app.controller('SocialTradingController', function ($scope, $location, $filter) 
         $location.path("socialUser1");
     };
 
+    $scope.dashboard = function () {
+        $location.path("dashboard");
+    };
+
     $scope.renderPerformanceGraph = function () {
 
         console.log("rendering performance graph...");
