@@ -1,10 +1,13 @@
-<div ng-init="tradeValue = 10" class="modal-header">
+<div ng-init="tradeValue = 1" class="modal-header">
     <h3 class="modal-title">Copying Trade</h3>
-    <span></span>
+    <span>{{stock.stock}}</span><br/>
+    <span>{{stock.description}}</span><br/>
+    <span>{{stock.price}}</span>
 </div>
 <div class="modal-body">
     <div class="row">
         <div class="col-md-6 col-md-offset-4">
+            <h4>Available Funds: S$<b><span ng-class="{'text-red': funds - (tradeValue * stock.price * 1000) <= 0}">{{funds - (tradeValue * stock.price * 1000) | currency}}</span></b></h4>
             <button type="button" ng-click="decrement()" class="btn btn-default">
                 <i class="fa fa-minus"></i>
             </button>
@@ -16,6 +19,6 @@
     </div>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+    <button class="btn btn-primary" ng-disabled="funds - (tradeValue * stock.price * 1000) <= 0" ng-click="submit()">Submit</button>
     <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>

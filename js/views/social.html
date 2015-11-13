@@ -46,7 +46,6 @@
                         <li class="active"><a href ng-click="dashboard()"><i class='fa fa-home'></i> <span>Home</span></a></li>
                         <li><a href="#"><i class='fa fa-credit-card'></i> Trades</a></li>
                         <li><a href="#"><i class='fa fa-star-o'></i> Portfolio</a></li>
-                        <li><a href="#"><i class='fa fa-rocket'></i> Recommendations</a></li>
                         <li><a href ng-click="social()"><i class='fa fa-users'></i> Social Trading</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -108,7 +107,7 @@
                         <!-- top users -->
                         <div class="box box-primary">
                             <div class="box-header with-border">
-                                <h3 class="box-title">Top Traders <span class="text-small"> sorted on 1-year trailing return</span></h3>
+                                <h3 class="box-title">Top Traders <span class="text-small"> sorted on your investment style</span></h3>
                             </div><!-- /.box-header -->
                             <div class="box-body">
                                 <ul class="products-list product-list-in-box">
@@ -164,7 +163,7 @@
                         </div><!-- /.box-footer -->
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-5">
 
                         <!-- opinions section -->
                         <div class="box box-primary">
@@ -223,7 +222,74 @@
                             </div><!-- /.box-body -->
                         </div><!-- /.box -->
                         <div class="box-footer text-center">
-                            <a href="#" class="uppercase">See all</a>
+                            <a href="#" class="uppercase">See More</a>
+                        </div><!-- /.box-footer -->
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <!-- top users -->
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Activity Feed </h3>
+                            </div><!-- /.box-header -->
+                            <div class="box-body">
+                                <ul class="products-list product-list-in-box">
+                                    <li class="item">
+                                        <span class="pull-right timing-text">1h</span><br/>
+                                        <div class="product-img">
+                                            <img src="img/user1-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" ng-click="socialUser1();" class="product-title">Bettina Julian </a><br/>
+                                            Bought <span class="value">25</span> NASDAQ: GOOG @ <span class="value">735.40</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <span class="pull-right timing-text">1h</span><br/>
+                                        <div class="product-img">
+                                            <img src="img/user1-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" ng-click="socialUser1();" class="product-title">Bettina Julian </a><br/>
+                                            Bought <span class="value">500</span> SGX: 42R @ <span class="value">0.315</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <span class="pull-right timing-text">3h</span><br/>
+                                        <div class="product-img">
+                                            <img src="img/user3-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" class="product-title">Yuriy Pronin </a><br/>
+                                            Sold <span class="value">350</span> AP4.SI @ <span class="value">2.37</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <span class="pull-right timing-text">4h</span><br/>
+                                        <div class="product-img">
+                                            <img src="img/user4-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" class="product-title">Sparta Sane </a><br/>
+                                            Bought <span class="value">31</span> NYSE: RDS.A @ <span class="value">49.60</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                    <li class="item">
+                                        <span class="pull-right timing-text">4h</span><br/>
+                                        <div class="product-img">
+                                            <img src="img/user4-128x128.jpg" alt="User Image"/>
+                                        </div>
+                                        <div class="product-info">
+                                            <a href="#" class="product-title">Sparta Sane </a><br/>
+                                            Sold <span class="value">USD/JPY</span> @ <span class="value">88.56</span>
+                                        </div>
+                                    </li><!-- /.item -->
+                                </ul>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                        <div class="box-footer text-center">
+                            <a href="javascript::;" class="uppercase">See More</a>
                         </div><!-- /.box-footer -->
                     </div>
 

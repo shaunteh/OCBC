@@ -1,10 +1,10 @@
 app.controller('SocialTradingController', function ($scope, $location, $filter) {
 
     $scope.summary = [
-        {stock: "NASDAQ: AAPL", description: "Apple Inc.", return: 201.32},
-        {stock: "NASDAQ: GOOG", description: "Alphabet Inc Class C", return: 150.55},
-        {stock: "SGX: BN4", description: "Keppel Corporation Limited", return: -23.55},
-        {stock: "SGX: 42R", description: "Jumbo Group Limited", return: 305.55},
+        {stock: "NASDAQ: AAPL", description: "Apple Inc.", price: 116.05, return: 201.32},
+        {stock: "NASDAQ: GOOG", description: "Alphabet Inc Class C", price: 735.4, return: 150.55},
+        {stock: "SGX: BN4", description: "Keppel Corporation Limited", price: 6.90, return: -23.55},
+        {stock: "SGX: 42R", description: "Jumbo Group Limited", price: 0.351, return: 305.55},
     ];
 
     $scope.social = function () {

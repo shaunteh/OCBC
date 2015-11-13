@@ -156,7 +156,7 @@
                                                 <td>{{entry.stock}}</td>
                                                 <td>{{entry.description}}</td>
                                                 <td><span class="{{evaluateReturn(entry.return)}}">{{entry.return}}%</span></td>
-                                                <td><button type="button" ng-click="copy()" class="btn btn-sm btn-default">Copy</button></td>
+                                                <td><button type="button" ng-click="copy(entry)" class="btn btn-sm btn-default">Copy</button></td>
                                             </tr>
 
                                         </table>
@@ -164,6 +164,35 @@
                                 </div>
                                 <div class="col-md-6 top-border">
                                     <h4>Activity Feed</h4>
+                                    <div class="table-responsive no-padding" ng-controller="ModalController">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <td>Bought <span class="value">25</span> NASDAQ: GOOG @ <span class="value">735.40</span>
+                                                    <p class="text-small">more than an hour ago</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bought <span class="value">500</span> SGX: 42R @ <span class="value">0.315</span>
+                                                    <p class="text-small">more than an hour ago</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sold <span class="value">GBP/USD</span> @ <span class="value">1.5030</span>
+                                                    <p class="text-small">more than two hours ago</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bought <span class="value">AUD/USD</span> @ <span class="value">0.8745</span>
+                                                    <p class="text-small">more than 1 day ago</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Sold <span class="value">250</span> SGX:BN4 @ <span class="value">6.90</span>
+                                                    <p class="text-small">more than 3 days ago</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div><!-- /.box-body -->
                                 </div>
                             </div>
                         </div><!-- /.widget-user -->
@@ -187,7 +216,7 @@
         <span></span>
         </div>
         <div class="modal-body">
-        Copy Success!
+        Your RM have been notified and will execute this trade for you!
         </div>
         <div class="modal-footer">
         <button class="btn btn-warning" ng-click="ok()">Got it!</button>

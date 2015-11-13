@@ -98,6 +98,18 @@
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+.value {
+    font-weight: 700;
+}
+
+.login-page, .register-page {
+    background: #FFFFFF;
+}
+
+.login-box-body, .register-box-body {
+    background: #D2D6DE;
+}
+
 /* numbered buttons */
 #status-buttons                 {  }
 #status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }

@@ -8,6 +8,7 @@
             <div class="login-box-body" ng-if="!login">
                 <p class="login-box-msg"> <font color='red'>{{result}}</font></p>
                 <p class="login-box-msg">Sign in to start something big</p>
+                <p class="login-box-msg">Username: admin <br/> Password: password</p>
                 <form name='loginForm' ng-submit="authenticateUser()" method="post">
                     <div class="form-group has-feedback">
                         <input type="username" class="form-control" placeholder="Username" ng-model="credentials.username"/>
