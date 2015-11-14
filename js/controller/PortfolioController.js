@@ -52,7 +52,7 @@ app.controller('PortfolioController', function ($scope, $filter) {
                 value: 350.00,
             }
         ],
-        totalValue: 331295.21,
+        totalValue: 298814.59,
         performances: [
             {
                 x: new Date('5/1/2015'),
